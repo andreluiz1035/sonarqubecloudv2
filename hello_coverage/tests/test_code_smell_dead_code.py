@@ -1,4 +1,4 @@
-from code_smell import soma
+from code_smell_dead_code import soma
 
 def test_soma_basica():
     assert soma(1, 2) == 3
