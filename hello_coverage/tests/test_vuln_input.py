@@ -1,4 +1,5 @@
-from vuln_input import executar_expressao
+from vulneravel import autenticar
 
-def test_executar_expressao():
-    assert executar_expressao("1 + 1") == 2
+def test_autenticar():
+    assert autenticar("admin", "123456") == True
+    assert autenticar("x", "y") == False

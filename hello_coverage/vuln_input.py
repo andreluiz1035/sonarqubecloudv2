@@ -1,6 +1,6 @@
-# Exemplo de vulnerabilidade simples:
-# Uso de eval() — extremamente perigoso — o Sonar detecta como Security Hotspot.
+# Vulnerabilidade REAL: credenciais hardcoded
+USERNAME = "admin"
+PASSWORD = "123456"  # Sonar marca isso como Vulnerability
 
-def executar_expressao(expr):
-    # Vulnerabilidade proposital
-    return eval(expr)  
+def autenticar(usuario, senha):
+    return usuario == USERNAME and senha == PASSWORD
