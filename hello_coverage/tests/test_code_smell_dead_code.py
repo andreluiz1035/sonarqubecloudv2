@@ -1,4 +1,4 @@
-from code_smell_dead_code import soma
+from code_smell import soma
 
-    def test_soma_basica():
-    assert soma(2, 3) == 5
+def test_soma_basica():
+    assert soma(1, 2) == 3
