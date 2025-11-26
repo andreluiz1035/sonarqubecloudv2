@@ -37,9 +37,17 @@ jobs:
 
 
       # 4. Rodar testes com cobertura
-      - name: Run tests with coverage
-        run: |
-          pytest --cov=. --cov-report=xml
+      #- name: Run tests with coverage
+       # run: |
+        #  pytest --cov=. --cov-report=xml
+
+       - name: Run tests with coverage
+         working-directory: hello_coverage
+         run: |
+           pytest --cov=. --cov-report=xml:coverage.xml
+
+
+
 
       # 5. Rodar análise SonarCloud
       - name: SonarCloud Scan
