@@ -1,0 +1,15 @@
+name: Issue Notifier
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show issue info
+        run: |
+          echo "Nova issue criada!"
+          echo "Título: ${{ github.event.issue.title }}"
+          echo "Criada por: ${{ github.actor }}"
