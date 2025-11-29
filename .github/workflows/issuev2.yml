@@ -13,11 +13,14 @@ jobs:
         uses: actions/github-script@v7
         with:
           script: |
-            const body = `
-Nova issue criada!
-Título: ${context.payload.issue.title}
-Criada por: ${context.actor}
-`;
+            const title = context.payload.issue.title;
+            const actor = context.actor;
+
+            const body =
+              "Nova issue criada!\n" +
+              "Título: " + title + "\n" +
+              "Criada por: " + actor;
+
             github.rest.issues.createComment({
               owner: context.repo.owner,
               repo: context.repo.repo,
