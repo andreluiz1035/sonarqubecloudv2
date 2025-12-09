@@ -1,31 +1,15 @@
-import pytest
-
+import sys
+import importlib
+ 
 def test_bug_div_zero():
- #   with pytest.raises(ZeroDivisionError):
- #       import bug_div_zero
-#    try:
-
- #       import bug_div_zero
-
-  #  except ZeroDivisionError:
-
-   #     assert True   # só entra aqui se ocorrer erro
-
-    #else:
-
-     #   assert False  # se não deu erro, teste falha
+    if "bug_div_zero" in sys.modules:
+        del sys.modules["bug_div_zero"]
  
- Result = False
-
- try:
-
-        import bug_div_zero
-
- except ZeroDivisionError:
-
-        Result =  True   # só entra aqui se ocorrer erro
- else: 
-        Result = False       
+    Result = True
+    try:
+        importlib.import_module("bug_div_zero")
+    except ZeroDivisionError:
+        Result = False
  
- assert Result  # se não deu erro, teste falha
- 
+    assert Result
+
