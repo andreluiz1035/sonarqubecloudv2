@@ -24,7 +24,8 @@ def test_bug_div_zero():
  except ZeroDivisionError:
 
         Result =  True   # só entra aqui se ocorrer erro
-
+ else: 
+        Result = False       
  
  assert Result  # se não deu erro, teste falha
  
